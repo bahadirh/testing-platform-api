@@ -1,0 +1,23 @@
+{
+  "name": "testing-api",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@gitlab.com:cmpe492/testing-api.git",
+  "author": "Bahadir Hocamoglu <bahadirhocamoglu@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "mongoose": "^5.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  }
+}
