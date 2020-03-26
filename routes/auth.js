@@ -1,5 +1,5 @@
 const { validateJSON } = require('../utils')
-const { signup, login } = require('../controllers/auth')
+const { signup, login } = require('../controllers').auth
 
 const router = require('express').Router()
 
@@ -15,7 +15,7 @@ const router = require('express').Router()
 //   login
 // ]);
 
-router.use('/signup', signup.signupHandler, signup.signupErrorHandler)
-router.use('/login', login.loginHandler, login.loginErrorHandler)
+router.use('/signup', signup.signupHandler, signup.signupErrorHandler) // TODO: add ajv
+router.use('/login', login.loginHandler, login.loginErrorHandler) // TODO: add ajv
 
 module.exports = router

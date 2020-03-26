@@ -1,7 +1,7 @@
 const { model, Schema } = require('mongoose')
 
 const AppSchema = new Schema({
-  appName: {
+  name: {
     type: String,
     trim: true,
     required: [true, "App name can't be blank."],
