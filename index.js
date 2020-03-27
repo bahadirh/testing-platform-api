@@ -9,13 +9,11 @@ const { sessionSecret, PORT } = require('./config')
 const app = require('express')()
 const routes = require('./routes')
 
-// app.use(helmet({permittedCrossDomainPolicies: true, })) // TODO: fine-tuning?
+app.use(helmet()) // TODO: fine-tuning?
 app.use(
   cors({
     credentials: true,
     origin: true,
-    preflightContinue: true,
-    optionsSuccessStatus: 200,
   })
 )
 app.use(
