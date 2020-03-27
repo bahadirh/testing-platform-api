@@ -21,6 +21,7 @@ app.use(
     name: 'testingApp',
     maxAge: 7 * 24 * 60 * 60 * 1000, // 1 week
     secret: sessionSecret,
+    sameSite: true,
   })
 )
 app.use(formidable({ multiples: true, keepExtensions: true }))
