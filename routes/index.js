@@ -12,4 +12,8 @@ router.get('/', (req, res) => {
   res.send('Live!')
 })
 
+router.use('/', (error, req, res, next) => {
+  //catch-all error handler
+})
+
 module.exports = router
