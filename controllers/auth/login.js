@@ -13,7 +13,7 @@ const loginHandler = (req, res, next) => {
         delete instance.password
         res.json({ status: 'success', user: instance })
       } else {
-        throw new Error('No email-password match.')
+        next(Error('No email-password match.'))
       }
     })
     .then(next)
