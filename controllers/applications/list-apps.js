@@ -2,7 +2,7 @@ const { App } = require('../../models')
 
 const listAppsHandler = (req, res, next) => {
   App.find({ owner: req.session.userid })
-    .select('+name +version -owner')
+    .select('+name +version -owner -files')
     .lean()
     .then(docs => {
       res.json({ status: 'success', apps: docs })
