@@ -6,9 +6,6 @@ const router = require('express').Router()
 router.options((req, res) => {
   res.sendStatus(200)
 })
-router.post('/test', (req, res, next) => {
-  res.json()
-})
 
 router.use('/auth', authRouter)
 router.use('/apps', appRouter)
