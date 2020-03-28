@@ -1,7 +1,7 @@
-const minioClient = require('./minio')
+const minio = require('./minio')
 const validateJSON = require('./json-validation')
 
 module.exports = {
-  minioClient,
+  minio,
   validateJSON,
 }
