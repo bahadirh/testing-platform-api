@@ -4,4 +4,4 @@ const logoutHandler = (req, res, next) => {
   next()
 }
 
-module.exports = { logoutHandler }
+module.exports = logoutHandler

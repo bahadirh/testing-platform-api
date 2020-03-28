@@ -1,3 +1,9 @@
 const client = require('./client')
 
-module.exports = null // TODO: implement file-uploading fn
+module.exports = async (bucket, fileName, filePath) => {
+  if (!(await client.bucketExists(bucket))) {
+    await client.makeBucket(bucket)
+  }
+
+  return client.fPutObject(bucket, fileName, filePath)
+}

@@ -9,9 +9,6 @@ const FileSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true,
   },
-  version: {
-    type: String,
-  },
 })
 FileSchema.index({ owner: 1 })
 

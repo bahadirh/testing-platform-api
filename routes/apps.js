@@ -1,8 +1,8 @@
-const { createApp, listApps } = require('../controllers').apps
+const { listApps, createApp } = require('../controllers').apps
 
 const router = require('express').Router()
 
-router.post('/new', createApp.createAppHandler, createApp.createAppErrorHandler) // TODO: add auth
-router.get('/list', listApps.listAppsHandler) // TODO: add auth
+router.post('/new', createApp) // TODO: add auth
+router.get('/list', listApps) // TODO: add auth
 
 module.exports = router

@@ -9,4 +9,4 @@ const listAppsHandler = (req, res, next) => {
     })
 }
 
-module.exports = { listAppsHandler }
+module.exports = [listAppsHandler]

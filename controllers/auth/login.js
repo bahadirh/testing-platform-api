@@ -25,7 +25,4 @@ const loginErrorHandler = (error, req, res, next) => {
   next(error)
 }
 
-module.exports = {
-  loginHandler,
-  loginErrorHandler,
-}
+module.exports = [loginHandler, loginErrorHandler]

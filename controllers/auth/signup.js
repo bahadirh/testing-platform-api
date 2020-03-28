@@ -19,7 +19,4 @@ const signupErrorHandler = (error, req, res, next) => {
   next(error)
 }
 
-module.exports = {
-  signupHandler,
-  signupErrorHandler,
-}
+module.exports = [signupHandler, signupErrorHandler]

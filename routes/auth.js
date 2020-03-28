@@ -15,8 +15,8 @@ const router = require('express').Router()
 //   login
 // ]);
 
-router.post('/signup', signup.signupHandler, signup.signupErrorHandler) // TODO: add ajv
-router.post('/login', login.loginHandler, login.loginErrorHandler) // TODO: add ajv
-router.use('/logout', logout.logoutHandler)
+router.post('/signup', signup) // TODO: add ajv
+router.post('/login', login) // TODO: add ajv
+router.use('/logout', logout)
 
 module.exports = router
