@@ -1,3 +1,4 @@
 const createApp = require('./create-app')
+const listApps = require('./list-apps')
 
-module.exports = { createApp }
+module.exports = { createApp, listApps }
