@@ -2,6 +2,7 @@ const { App } = require('../../models')
 
 const appDetailsHandler = (req, res, next) => {
   App.findById(req.params.id)
+    .lean()
     .then(doc => {
       if (!doc) {
         const err = Error('No app with given id.')
