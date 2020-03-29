@@ -2,12 +2,13 @@ const { App } = require('../../models')
 
 const appDetailsHandler = (req, res, next) => {
   App.findById(req.params.id)
+    .populate('files')
     .lean()
     .then(doc => {
       if (!doc) {
         const err = Error('No app with given id.')
         err.name = 'NoEntryError'
-        next(err)
+        throw err
       } else {
         res.json({ status: 'success', app: doc })
       }

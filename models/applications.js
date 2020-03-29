@@ -15,10 +15,12 @@ const AppSchema = new Schema({
     type: String,
     trim: true,
   },
-  files: {
-    type: [Schema.Types.ObjectId],
-    ref: 'File',
-  },
+  files: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'File',
+    },
+  ],
 })
 AppSchema.index({ owner: 1 })
 
