@@ -1,6 +1,7 @@
 const authRouter = require('./auth')
 const appRouter = require('./apps')
 const fileRouter = require('./files')
+const caseRouter = require('./cases')
 
 const router = require('express').Router()
 
@@ -11,6 +12,7 @@ router.options((req, res) => {
 router.use('/auth', authRouter)
 router.use('/apps', appRouter)
 router.use('/files', fileRouter)
+router.use('/cases', caseRouter)
 
 // dummy endpoint to check if API is online
 router.get('/', (req, res) => {
