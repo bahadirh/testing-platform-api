@@ -31,6 +31,10 @@ const UserSchema = new Schema(
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 )
 
+UserSchema.plugin(require("mongoose-unique-validator"), {
+  message: "is already taken." 
+});
+
 const User = model('User', UserSchema)
 
 module.exports = { User, UserSchema }

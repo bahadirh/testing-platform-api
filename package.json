@@ -19,7 +19,8 @@
     "express-formidable": "^1.2.0",
     "helmet": "^3.21.3",
     "minio": "^7.0.15",
-    "mongoose": "^5.9.5"
+    "mongoose": "^5.9.5",
+    "mongoose-unique-validator": "^2.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
