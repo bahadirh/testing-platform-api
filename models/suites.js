@@ -4,7 +4,7 @@ const SuiteSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, 'Cannot create a suite without a name.'],
+      required: [true, 'Every suite requires a name.'],
     },
     app: {
       type: Schema.Types.ObjectId,
