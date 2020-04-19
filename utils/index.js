@@ -1,7 +1,7 @@
 const minio = require('./minio')
-const validateJSON = require('./json-validation')
+const middlewares = require('./middleware')
 
 module.exports = {
   minio,
-  validateJSON,
+  ...middlewares,
 }
