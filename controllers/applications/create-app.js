@@ -16,7 +16,7 @@ const createAppHandler = (req, res, next) => {
 
 const createAppErrorHandler = (error, req, res, next) => {
   // TODO: handle errors
-  res.json({ status: 'error', message: error.message })
+  res.status(400).json({ status: 'error', message: error.message })
 }
 
 module.exports = [createAppHandler, createAppErrorHandler]
