@@ -13,6 +13,7 @@ const SuiteSchema = new Schema(
     owner: {
       type: Schema.Types.ObjectId,
       ref: 'User',
+      required: [true, 'Cannot create an app without owner.'],
     },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
