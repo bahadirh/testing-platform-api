@@ -9,7 +9,7 @@ const createAppHandler = (req, res, next) => {
     owner: req.session.userid,
   })
     .then(doc => {
-      res.json({ status: 'success', app: doc })
+      res.status(201).json({ status: 'success', app: doc })
     })
     .catch(next)
 }
