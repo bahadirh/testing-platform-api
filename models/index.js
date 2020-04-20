@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { dbURL, dbUsername, dbPassword } = require('../config')
+const { dbURL, dbUsername, dbPassword } = process.env
 
 const user = require('./users')
 const app = require('./applications')
@@ -16,7 +16,7 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
-  .catch((error) => {
+  .catch(error => {
     console.error('Unable to connect.')
     console.error(error.message)
   })

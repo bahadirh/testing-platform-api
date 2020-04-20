@@ -1,10 +1,10 @@
-require('dotenv').config()
+require('./config')
 const helmet = require('helmet')
 const cors = require('cors')
 const session = require('cookie-session')
 const formidable = require('express-formidable')
 
-const { sessionSecret, PORT } = require('./config')
+const { sessionSecret, PORT } = process.env
 
 const app = require('express')()
 const routes = require('./routes')
