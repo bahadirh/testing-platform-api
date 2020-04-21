@@ -7,6 +7,10 @@ const requiredEnvVars = [
   'minioURL',
   'minioAccessKey',
   'minioSecretKey',
+  'rabbitMQURL',
+  'rabbitMQVHost',
+  'rabbitMQUser',
+  'rabbitMQPass',
 ]
 // verify required env vars are supplied
 requiredEnvVars.forEach(envVar => {
