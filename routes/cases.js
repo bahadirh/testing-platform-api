@@ -1,8 +1,9 @@
-const { createCase, listCases } = require('../controllers').cases
+const cases = require('../controllers').cases
 
 const router = require('express').Router()
 
-router.post('/new', createCase)
-router.get('/list', listCases)
+router.post('/new', cases.createCase)
+router.post('/run', cases.runCase)
+router.get('/list', cases.listCases)
 
 module.exports = router
