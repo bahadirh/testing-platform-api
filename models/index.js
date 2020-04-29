@@ -6,7 +6,7 @@ const app = require('./applications')
 const file = require('./files')
 const suite = require('./suites')
 const case_ = require('./cases')
-
+const test = require('./tests')
 mongoose
   .connect(dbURL, {
     auth: { user: dbUsername, password: dbPassword },
@@ -27,4 +27,5 @@ module.exports = {
   ...file,
   ...suite,
   ...case_,
+  ...test,
 }
