@@ -7,9 +7,19 @@ const TestSchema = new Schema(
       required: true,
       ref: 'User',
     },
-    testSpec: {
-      type: Schema.Types.Mixed,
+    platformVersion: {
+      type: String,
       required: true,
+    },
+    testCase: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'Case',
+    },
+    buildFile: {
+      type: Schema.Types.ObjectId,
+      required: [true, 'Cannot run test without an app.'],
+      ref: 'File',
     },
     files: [{ type: String }],
   },
