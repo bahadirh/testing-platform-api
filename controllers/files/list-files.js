@@ -9,8 +9,5 @@ const listFilesHandler = (req, res, next) => {
     })
     .catch(next)
 }
-const listFilesErrorHandler = (err, req, res, next) => {
-  console.error(err)
-  next(err)
-}
-module.exports = [listFilesHandler, listFilesErrorHandler]
+
+module.exports = [listFilesHandler]

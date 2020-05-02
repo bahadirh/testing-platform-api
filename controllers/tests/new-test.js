@@ -22,7 +22,6 @@ const newTestHandler = (req, res, next) => {
 }
 
 const newTestErrorHandler = (error, req, res, next) => {
-  console.error(error)
   res.status(400).json({ status: 'error', message: error.message })
   next(error)
 }
