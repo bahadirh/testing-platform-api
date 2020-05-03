@@ -1,5 +1,5 @@
 const { File_, Test, Case } = require('../../models')
-const { sendBufferToQueue } = require('../../utils')
+const { sendBufferToQueue, urlFromEnv } = require('../../utils')
 
 const newTestHandler = (req, res, next) => {
   Test.create({
@@ -13,6 +13,7 @@ const newTestHandler = (req, res, next) => {
       const testCase = await Case.findById(req.fields.testCase).lean()
 
       await sendBufferToQueue(
+        urlFromEnv,
         _doc.platformVersion,
         Buffer.from(
           JSON.stringify({

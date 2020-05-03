@@ -1,11 +1,8 @@
 const amqp = require('amqplib')
-const { rabbitMQURL, rabbitMQVHost, rabbitMQUser, rabbitMQPass } = process.env
 
-module.exports = (queueName, msg) => {
+module.exports = (url, queueName, msg) => {
   return amqp
-    .connect(
-      `amqp://${rabbitMQUser}:${rabbitMQPass}@${rabbitMQURL}${rabbitMQVHost}`
-    )
+    .connect(url)
     .then(async conn => {
       const channel = await conn.createChannel()
 

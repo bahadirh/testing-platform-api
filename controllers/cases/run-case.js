@@ -1,5 +1,5 @@
 const { Case } = require('../../models')
-const { sendBufferToQueue } = require('../../utils')
+const { sendBufferToQueue, urlFromEnv } = require('../../utils')
 
 const runCaseHandler = (req, res, next) => {
   Case.findOne(req.fields.case_id)
@@ -12,7 +12,11 @@ const runCaseHandler = (req, res, next) => {
       }
     })
     .then(async doc => {
-      await sendBufferToQueue('task_queue', Buffer.from(JSON.stringify(doc)))
+      await sendBufferToQueue(
+        urlFromEnv,
+        'task_queue',
+        Buffer.from(JSON.stringify(doc))
+      )
 
       res.sendStatus(204)
     })

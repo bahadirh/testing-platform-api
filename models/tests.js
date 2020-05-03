@@ -28,6 +28,9 @@ const TestSchema = new Schema(
       required: true,
       default: 'Initialized',
     },
+    result: {
+      type: Schema.Types.Mixed,
+    },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 )
