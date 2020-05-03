@@ -22,6 +22,12 @@ const TestSchema = new Schema(
       ref: 'File',
     },
     files: [{ type: String }],
+    status: {
+      type: String,
+      enum: ['Initialized', 'Done'],
+      required: true,
+      default: 'Initialized',
+    },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 )
