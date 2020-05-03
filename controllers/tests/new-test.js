@@ -1,4 +1,4 @@
-const { File_, Test } = require('../../models')
+const { File_, Test, Case } = require('../../models')
 const { sendBufferToQueue } = require('../../utils')
 
 const newTestHandler = (req, res, next) => {
@@ -10,10 +10,17 @@ const newTestHandler = (req, res, next) => {
   })
     .then(async ({ _doc }) => {
       const file = await File_.findById(req.fields.buildFile).lean()
+      const testCase = await Case.findById(req.fields.testCase).lean()
 
       await sendBufferToQueue(
         _doc.platformVersion,
-        Buffer.from(JSON.stringify({ ..._doc, buildFile: file.name }))
+        Buffer.from(
+          JSON.stringify({
+            ..._doc,
+            buildFile: file.name,
+            testCase: testCase.sequence,
+          })
+        )
       )
 
       res.json({ status: 'success' })
