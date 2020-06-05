@@ -7,7 +7,7 @@ module.exports = () =>
 
     const testInstance = await Test.findById(test_id)
 
-    testInstance.status = 'Done'
+    testInstance.status = 'error' in results ? 'Error' : 'Done'
     testInstance.result = results
     await testInstance.save()
 

@@ -24,7 +24,7 @@ const TestSchema = new Schema(
     files: [{ type: String }],
     status: {
       type: String,
-      enum: ['Initialized', 'Done'],
+      enum: ['Initialized', 'Error', 'Done'],
       required: true,
       default: 'Initialized',
     },
