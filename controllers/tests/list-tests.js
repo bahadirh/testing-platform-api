@@ -17,7 +17,6 @@ const listTestsHandler = (req, res, next) => {
     .then(docs => {
       res.json({ status: 'success', tests: docs })
     })
-    .then(next)
     .catch(next)
 }
 

@@ -12,7 +12,7 @@ const listSuitesHandler = (req, res, next) => {
     .then(docs => {
       res.json({ status: 'success', suites: docs })
     })
-    .then(next)
+
     .catch(next)
 }
 
