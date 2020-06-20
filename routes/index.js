@@ -25,8 +25,7 @@ router.get('/', (req, res) => {
 
 router.use('/', (error, req, res, next) => {
   //catch-all error handler
-  console.error(error)
-  next(error)
+  res.status(400).json({ status: 'error', message: error.message })
 })
 
 module.exports = router
