@@ -2,7 +2,7 @@ const { Test } = require('../../models')
 
 const listTestsHandler = (req, res, next) => {
   Test.find({ owner: req.session.userid })
-    .select('platformName testCase buildFile status createdAt')
+    .select('platformName testCase buildFile status createdAt result')
     .populate({
       path: 'testCase',
       select: 'name _id',
@@ -15,7 +15,13 @@ const listTestsHandler = (req, res, next) => {
     })
     .lean()
     .then(docs => {
-      res.json({ status: 'success', tests: docs })
+      res.json({
+        status: 'success',
+        tests: docs.map(doc => {
+          doc.result = doc.result.state.length
+          return doc
+        }),
+      })
     })
     .catch(next)
 }
