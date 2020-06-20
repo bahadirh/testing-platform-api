@@ -4,6 +4,7 @@ const fileRouter = require('./files')
 const caseRouter = require('./cases')
 const suitesRouter = require('./suites')
 const testsRouter = require('./tests')
+const screenshotsRouter = require('./screenshots')
 
 const router = require('express').Router()
 
@@ -17,6 +18,7 @@ router.use('/files', fileRouter)
 router.use('/cases', caseRouter)
 router.use('/suites', suitesRouter)
 router.use('/tests', testsRouter)
+router.use('/screenshots', screenshotsRouter)
 
 // dummy endpoint to check if API is online
 router.get('/', (req, res) => {
