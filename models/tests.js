@@ -24,9 +24,9 @@ const TestSchema = new Schema(
     files: [{ type: String }],
     status: {
       type: String,
-      enum: ['Initialized', 'Error', 'Done'],
+      enum: ['Submitted', 'Error', 'Done'],
       required: true,
-      default: 'Initialized',
+      default: 'Submitted',
     },
     result: {
       type: Schema.Types.Mixed,

@@ -15,8 +15,9 @@ const signupErrorHandler = (error, req, res, next) => {
       status: 'error',
       message: 'Email address is already signed up.',
     })
+  } else {
+    next(error)
   }
-  next(error)
 }
 
 module.exports = [signupHandler, signupErrorHandler]

@@ -29,9 +29,4 @@ const newTestHandler = (req, res, next) => {
     .catch(next)
 }
 
-const newTestErrorHandler = (error, req, res, next) => {
-  res.status(400).json({ status: 'error', message: error.message })
-  next(error)
-}
-
-module.exports = [newTestHandler, newTestErrorHandler]
+module.exports = [newTestHandler]

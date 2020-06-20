@@ -26,6 +26,8 @@ const testDetailsErrorHandler = (err, req, res, next) => {
 
     case 'NoEntryError':
       res.status(404).json({ status: 'error', message: err.message })
+      break
+
     default:
       next(err)
       break

@@ -20,9 +20,4 @@ const loginHandler = (req, res, next) => {
     .catch(next)
 }
 
-const loginErrorHandler = (error, req, res, next) => {
-  res.status(400).json({ status: 'error', message: error.message })
-  next(error)
-}
-
-module.exports = [loginHandler, loginErrorHandler]
+module.exports = [loginHandler]

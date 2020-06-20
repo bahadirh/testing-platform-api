@@ -12,11 +12,4 @@ const createCaseHandler = (req, res, next) => {
     .catch(next)
 }
 
-const createCaseErrorHandler = (error, req, res, next) => {
-  if (error.name == 'ValidationError') {
-    res.status(400).json({ status: 'error', message: error._message })
-  }
-  next(error)
-}
-
-module.exports = [createCaseHandler, createCaseErrorHandler]
+module.exports = [createCaseHandler]

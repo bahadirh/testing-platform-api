@@ -10,11 +10,12 @@ const retrieveScreenshot = (req, res, next) => {
       .then(test => {
         if (req.params.ss_no > test.result.state.length) {
           throw new Error('Invalid screenshot number.')
+        } else {
+          return downloadFileStream(
+            req.session.userid,
+            `${req.params.test_id}/${req.params.ss_no}.png`
+          )
         }
-        return downloadFileStream(
-          req.session.userid,
-          `${req.params.test_id}/${req.params.ss_no}.png`
-        )
       })
       .then(file => {
         file.pipe(res)

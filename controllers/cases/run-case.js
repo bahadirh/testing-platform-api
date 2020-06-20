@@ -25,7 +25,6 @@ const runCaseHandler = (req, res, next) => {
 
 const runCaseErrorHandler = (error, req, res, next) => {
   res.status(500).json({ status: 'error', message: error.message })
-  next(error)
 }
 
 module.exports = [runCaseHandler, runCaseErrorHandler]
