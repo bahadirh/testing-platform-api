@@ -3,7 +3,7 @@ const cors = require('cors')
 const session = require('cookie-session')
 const formidable = require('express-formidable')
 
-const { sessionSecret, PORT } = process.env
+const { sessionSecret } = process.env
 
 const app = require('express')()
 const routes = require('./routes')
@@ -27,8 +27,4 @@ app.use(formidable({ multiples: true, keepExtensions: true }))
 
 app.use('/', routes)
 
-module.exports = cb =>
-  app.listen(PORT, () => {
-    console.info(`Listening connections on port ${PORT}`)
-    cb()
-  })
+module.exports = app
